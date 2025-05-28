@@ -10,7 +10,7 @@
   font-family: "Press Start 2P", cursive;
   image-rendering: pixelated;
   text-align: center;
-  width: 600px;
+  width: 650px;
 }
 
 #menu-title {
@@ -24,6 +24,7 @@ p {
   font-family: "Press Start 2P", cursive;
   font-size: 1rem;
   color: #fef2bf;
+  line-height: 1.5;
 }
 
 .instructions {
