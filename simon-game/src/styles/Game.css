@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 #level-title {
   font-family: "Press Start 2P", cursive;
   font-size: 3rem;
@@ -11,17 +13,11 @@
   margin: auto;
 }
 
-/* .row {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-} */
-
 .btn {
   margin: 25px;
   display: inline-block;
-  height: 200px;
-  width: 200px;
+  height: 220px;
+  width: 220px;
   border: 10px solid black;
   border-radius: 20%;
 }
@@ -32,17 +28,17 @@
 }
 
 .green {
-  background-color: #28a745;
+  background-color: green;
 }
 
 .red {
-  background-color: #dc3545;
+  background-color: red;
 }
 
 .yellow {
-  background-color: #ffc107;
+  background-color: yellow;
 }
 
 .blue {
-  background-color: #007bff;
+  background-color: blue;
 }

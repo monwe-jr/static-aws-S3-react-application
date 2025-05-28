@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: #011f3f;
+  min-height: 100vh;
+  padding: 10px 0;
 }
 
 .game-over {
