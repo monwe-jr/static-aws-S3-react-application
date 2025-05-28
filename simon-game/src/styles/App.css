@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  background-color: #011f3f;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}

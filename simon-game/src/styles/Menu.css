@@ -1,0 +1,59 @@
+.menu {
+  background-color: #1a1a1a;
+  border: 6px solid #000;
+  padding: 40px;
+  margin: 50px auto;
+  width: fit-content;
+  box-shadow: 8px 8px 0 #000;
+  font-family: "Press Start 2P", cursive;
+  image-rendering: pixelated;
+  text-align: center;
+  max-width: 600px;
+}
+
+#menu-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2em;
+  margin: 5%;
+  color: #fef2bf;
+}
+
+p {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1em;
+  color: #fef2bf;
+}
+
+.instructions {
+  background-color: black;
+  padding: 45px; /* Space inside the box */
+  margin: 35px 0; /* Space around the box */
+  border: 4px dashed #fef2bf; /* Optional: retro border to match style */
+  box-shadow: inset 0 0 10px #000; /* Optional: gives a "screen" depth */
+  border-radius: 8px;
+}
+
+#play {
+  background-color: #ff004d;
+  color: white;
+  padding: 10px 20px;
+  font-family: "Press Start 2P", cursive; /* Optional for pixel font */
+  font-size: 12px;
+  border: 4px solid #000;
+  box-shadow: inset 0 0 0 2px #ff3366, 4px 4px 0 #000;
+  outline: none;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+  width: fit-content;
+  user-select: none;
+  text-transform: uppercase;
+  image-rendering: pixelated;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+#play:hover {
+  background-color: #ff3366;
+  box-shadow: 2px 2px 0 #000;
+  transform: translate(2px, 2px);
+}
