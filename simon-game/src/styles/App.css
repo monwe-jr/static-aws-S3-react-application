@@ -9,3 +9,16 @@
   background-color: red;
   opacity: 0.8;
 }
+
+/* --- Responsive Additions for app.css --- */
+@media (max-width: 768px) {
+  .App {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 10px 0;
+  }
+}

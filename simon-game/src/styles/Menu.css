@@ -60,3 +60,168 @@ p {
   box-shadow: 2px 2px 0 #000;
   transform: translate(2px, 2px);
 }
+
+@media (max-width: 1027px) {
+  .menu {
+    width: 92%;
+    padding: 30px;
+  }
+
+  #menu-title {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .instructions {
+    padding: 26px;
+    margin: 28px 0;
+  }
+
+  #play {
+    font-size: 10px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .menu {
+    width: 90%;
+    padding: 28px;
+  }
+
+  #menu-title {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  .instructions {
+    padding: 24px;
+    margin: 25px 0;
+  }
+
+  #play {
+    font-size: 9.5px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .menu {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 20px auto;
+    max-width: 95vw; /* Ensures space on left and right */
+  }
+
+  #menu-title {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .instructions {
+    padding: 16px;
+    margin: 18px 0;
+  }
+
+  #play {
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+}
+
+/* --- Responsive Additions for menu.css --- */
+@media (max-width: 480px) {
+  .menu {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  #menu-title {
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  .instructions {
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  #play {
+    font-size: 10px;
+    padding: 8px 16px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .menu {
+    width: 90%;
+    padding: 30px;
+  }
+
+  #menu-title {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .instructions {
+    padding: 30px;
+    margin: 30px 0;
+  }
+
+  #play {
+    font-size: 11px;
+    padding: 9px 18px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .menu {
+    width: 80%;
+  }
+}
+
+@media (max-width: 320px) {
+  .instructions {
+    width: 100%;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+  }
+
+  .instructions p {
+    font-size: 0.65rem;
+  }
+
+  #menu-title {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.65rem;
+  }
+
+  #play {
+    font-size: 7px;
+    padding: 4px 6px;
+  }
+}
