@@ -8,6 +8,7 @@ const buttonColours = ["red", "blue", "green", "yellow"];
 export default function App() {
   const [gamePattern, setGamePattern] = useState([]);
   const [userPattern, setUserPattern] = useState([]);
+  const [lastColor, setLastColor] = useState(null);
   const [level, setLevel] = useState(0);
   const [started, setStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
@@ -47,12 +48,20 @@ export default function App() {
   };
 
   const nextSequence = () => {
-    const randomColor = buttonColours[Math.floor(Math.random() * 4)];
+    let choices = [...buttonColours];
+    if (lastColor !== null) {
+      choices = choices.filter((color) => color !== lastColor); // exclude last
+    }
+
+    const randomColor = choices[Math.floor(Math.random() * choices.length)];
+    setLastColor(randomColor); // save for next round
+
     setGamePattern((prev) => {
       const newPattern = [...prev, randomColor];
-      playSequence(newPattern); // 👈 Play full updated sequence
+      playSequence(newPattern);
       return newPattern;
     });
+
     setUserPattern([]);
     setIsUserTurn(false);
     setLevel((prev) => prev + 1);
