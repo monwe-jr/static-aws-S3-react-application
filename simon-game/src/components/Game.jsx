@@ -1,6 +1,18 @@
 import "../styles/Game.css";
 
-export default function Game({ level, gameOver, onButtonClick }) {
+export default function Game({
+  level,
+  gameOver,
+  onButtonClick,
+  started,
+  isUserTurn,
+}) {
+  const handleInput = (color, e) => {
+    e.preventDefault(); // Prevent double-trigger
+    if (!started || !isUserTurn) return;
+    onButtonClick(color);
+  };
+
   return (
     <div className="game">
       <h1 id="level-title">
@@ -11,24 +23,28 @@ export default function Game({ level, gameOver, onButtonClick }) {
           <div
             id="green"
             className="btn green"
-            onClick={() => onButtonClick("green")}
+            onTouchStart={(e) => handleInput("green", e)}
+            onClick={(e) => handleInput("green", e)}
           />
           <div
             id="red"
             className="btn red"
-            onClick={() => onButtonClick("red")}
+            onTouchStart={(e) => handleInput("red", e)}
+            onClick={(e) => handleInput("red", e)}
           />
         </div>
         <div className="row">
           <div
             id="yellow"
             className="btn yellow"
-            onClick={() => onButtonClick("yellow")}
+            onTouchStart={(e) => handleInput("yellow", e)}
+            onClick={(e) => handleInput("yellow", e)}
           />
           <div
             id="blue"
             className="btn blue"
-            onClick={() => onButtonClick("blue")}
+            onTouchStart={(e) => handleInput("blue", e)}
+            onClick={(e) => handleInput("blue", e)}
           />
         </div>
       </div>

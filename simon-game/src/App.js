@@ -125,6 +125,8 @@ export default function App() {
           level={level}
           gameOver={gameOver}
           onButtonClick={handleButtonClick}
+          started={started}
+          isUserTurn={isUserTurn}
         />
       )}
     </div>
