@@ -20,6 +20,7 @@
   width: 220px;
   border: 10px solid black;
   border-radius: 20%;
+  touch-action: manipulation;
 }
 
 .pressed {

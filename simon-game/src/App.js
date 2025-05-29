@@ -12,6 +12,7 @@ export default function App() {
   const [started, setStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [flashGameOver, setFlashGameOver] = useState(false);
+  const [isUserTurn, setIsUserTurn] = useState(false);
   const [menu, setMenu] = useState(true);
 
   useEffect(() => {
@@ -47,25 +48,45 @@ export default function App() {
 
   const nextSequence = () => {
     const randomColor = buttonColours[Math.floor(Math.random() * 4)];
-    setGamePattern((prev) => [...prev, randomColor]);
+    setGamePattern((prev) => {
+      const newPattern = [...prev, randomColor];
+      playSequence(newPattern); // 👈 Play full updated sequence
+      return newPattern;
+    });
     setUserPattern([]);
-    setTimeout(() => {
-      playSound(randomColor);
-      animatePress(randomColor);
-    }, 100);
+    setIsUserTurn(false);
     setLevel((prev) => prev + 1);
   };
 
-  const handleButtonClick = (color) => {
-    if (!started) return;
-    setUserPattern((prev) => [...prev, color]);
-    playSound(color);
-    animatePress(color);
+  // ✅ Helper to play the full sequence with delays
+  const playSequence = (pattern) => {
+    pattern.forEach((color, i) => {
+      setTimeout(() => {
+        playSound(color);
+        animatePress(color);
+        if (i === pattern.length - 1) {
+          setIsUserTurn(true); // ✅ User can start after sequence finishes
+        }
+      }, i * 600); // ⏱️ 600ms between presses
+    });
+  };
 
-    const index = userPattern.length;
-    if (gamePattern[index] !== color) {
-      handleGameOver();
-    }
+  const handleButtonClick = (color) => {
+    if (!started || !isUserTurn) return;
+
+    setUserPattern((prev) => {
+      const newPattern = [...prev, color];
+      const index = newPattern.length - 1;
+
+      playSound(color);
+      animatePress(color);
+
+      if (gamePattern[index] !== color) {
+        handleGameOver();
+      }
+
+      return newPattern;
+    });
   };
 
   const handleGameOver = () => {
